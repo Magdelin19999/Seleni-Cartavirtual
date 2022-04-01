@@ -1,4 +1,3 @@
-
 from smtplib import SMTP
 from email.message import EmailMessage
 
@@ -15,7 +14,6 @@ def mensaje(correoEmpresa,id):
     msg['Form']=username
     msg['To']=correoEmpresa
 
-    
     server = SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username, password)

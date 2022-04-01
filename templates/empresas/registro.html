@@ -16,7 +16,8 @@
         email
         contraseña
     </p> -->
-    <form action="{{ url_for('registroEmpresaForm') }}" method="POST" class="p-2 pb-0 p-md-5">
+
+    <form  class="container" action="{{ url_for('registroEmpresaForm') }}" method="POST" class="p-2 pb-0 p-md-5">
         <div class="row align-items-center g-lg-5 py-2">
 
             <div class="col-lg-5 text-center ">
@@ -33,7 +34,7 @@
                     <label for="descEmpresa">Descripcion Empresa</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="celularEmpresa" name="celularEmpresa" placeholder="Celular Empresa">
+                    <input type="number" class="form-control" id="celularEmpresa" name="celularEmpresa" placeholder="Celular Empresa">
                     <label for="celularEmpresa">Celular Empresa</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -53,22 +54,18 @@
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div> -->
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Siguiente</button>
                 <div class="text-center">
                     <hr class="my-2">
                     <small class="text-muted text-center">Ya tienes cuenta <a
                             href="{{ url_for('inicioSesion') }}">Inicia Sesion!!</a></small>
                 </div>
-
             </div>
-
-
         </div>
     </form>
 
     <div class="m-0 p-0 text-center">
         {%include 'helpers/flash.html'%}
-
         <a href="{{ url_for('home') }}">home!!</a>
     </div>
 

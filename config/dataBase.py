@@ -1,11 +1,14 @@
 import mysql.connector
+from config import settings
 
 DB = mysql.connector.connect(
     
-    host='localhost',
-    user='root',
-    password='',
-    database='cartavirtual',
-    port=3306
+    host=settings.MYSQL_HOSTNAME,
+    user=settings.MYSQL_USERNAME,
+    password=settings.MYSQL_PASSWORD,
+    database=settings.MYSQL_DATABASE,
+    port=settings.MYSQL_PORT,
     
 )
+
+DB.autcommit = True

@@ -2,7 +2,6 @@ from flask import session
 from config import dataBase
 
 DB = dataBase.DB
-DB.autocommit = True
 
 
 def insertUsuario(
@@ -30,9 +29,9 @@ def obtenerDBID(id):
     if empresa:
         print(f"tamaño diccionario {len(empresa)}")
         activarID(empresa["id"])
-        return {'estado':True, 'mensaje':f'Registro finalizado, inicia sesion  :)' }
+        return {'estado':True, 'mensaje':f'Registro finalizado, inicia sesion  :)','category':'success' }
 
-    return {'estado':False, 'mensaje':f'Erro al activar Cuenta :(' }
+    return {'estado':False, 'mensaje':f'Erro al activar Cuenta :(','category':'warning' }
 
 
 def activarID(id):
@@ -60,9 +59,9 @@ def obtenerEmpresa(correo, contrasenia):
         session["id"] = empresa["id"]
         session["usuario"] = empresa["nombreEmpresa"]
         
-        return {'estado':True, 'mensaje':f'Bienvenido {empresa["nombreEmpresa"]}' }
+        return {'estado':True, 'mensaje':f'Bienvenido {empresa["nombreEmpresa"]}','category':'success' }
 
-    return {'estado':False, 'mensaje':'Error de inicio de sesion :(' }
+    return {'estado':False, 'mensaje':'Error de inicio de sesion :(','category':'warning' }
     #'SELECT * FROM accounts WHERE correo = %s AND contrasenia = ''
 
 

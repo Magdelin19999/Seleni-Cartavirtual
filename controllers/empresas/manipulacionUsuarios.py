@@ -1,5 +1,6 @@
 from hashlib import md5
 from models.empresas import mensaje as sendMensaje,setenciasSQLUsusarios as SQL
+from flask import flash
 
 def datosFormulario(nombreEmpresa,descEmpresa,celularEmpresa,
                   direccionEmpresa,correo,contrasenia):
